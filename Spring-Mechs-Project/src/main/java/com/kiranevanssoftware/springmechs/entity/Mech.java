@@ -17,8 +17,8 @@ public class Mech {
 	private long id;
 	
 	@Column
-	@Min(2)
-	@Max(20)
+	@Min(2000)
+	@Max(3000)
 	private int yearManufactured;
 
 
@@ -35,7 +35,7 @@ public class Mech {
 	public Mech() {}
 
 
-	public Mech(@Min(2) @Max(20) int yearManufactured, String name, String model, int weight) {
+	public Mech(@Min(2000) @Max(3000) int yearManufactured, String name, String model, int weight) {
 		super();
 		this.yearManufactured = yearManufactured;
 		this.name = name;
@@ -44,7 +44,7 @@ public class Mech {
 	}
 	
 	//For testing
-	public Mech(long id, @Min(2) @Max(20) int yearManufactured, String name, String model, int weight) {
+	public Mech(long id, @Min(2000) @Max(3000) int yearManufactured, String name, String model, int weight) {
 		super();
 		this.id = id;
 		this.yearManufactured = yearManufactured;
