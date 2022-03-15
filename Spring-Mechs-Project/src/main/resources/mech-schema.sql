@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `mech` CASCADE;
+CREATE TABLE `mech` (
+	`id` BIGINT PRIMARY KEY AUTO_INCREMENT, 
+	`yearManufactured` INTEGER CHECK (yearManufactured<=3000 AND age>=2000),
+	`name` VARCHAR(255) NOT NULL UNIQUE,
+	`model` VARCHAR(255), 
+	`weight` INTEGER
+);
