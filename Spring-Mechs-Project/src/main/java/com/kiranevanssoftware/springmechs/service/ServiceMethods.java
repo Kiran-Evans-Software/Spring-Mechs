@@ -8,4 +8,10 @@ public interface ServiceMethods<T> {
 		
 		//Read All
 		List<T> readAll();
+		
+		//Read By Id
+		T readById(long id);
+		
+		//Update
+		T update(long id, T mech);
 }
