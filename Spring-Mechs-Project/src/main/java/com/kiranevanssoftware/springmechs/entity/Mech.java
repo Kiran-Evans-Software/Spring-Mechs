@@ -19,7 +19,7 @@ public class Mech {
 	@Column
 	@Min(2000)
 	@Max(3000)
-	private int yearManufactured;
+	private int year;
 
 
 	@Column(unique = true, nullable = false)
@@ -35,19 +35,19 @@ public class Mech {
 	public Mech() {}
 
 
-	public Mech(@Min(2000) @Max(3000) int yearManufactured, String name, String model, int weight) {
+	public Mech(@Min(2000) @Max(3000) int year, String name, String model, int weight) {
 		super();
-		this.yearManufactured = yearManufactured;
+		this.year = year;
 		this.name = name;
 		this.model = model;
 		this.weight = weight;
 	}
 	
 	//For testing
-	public Mech(long id, @Min(2000) @Max(3000) int yearManufactured, String name, String model, int weight) {
+	public Mech(long id, @Min(2000) @Max(3000) int year, String name, String model, int weight) {
 		super();
 		this.id = id;
-		this.yearManufactured = yearManufactured;
+		this.year = year;
 		this.name = name;
 		this.model = model;
 		this.weight = weight;
@@ -62,12 +62,12 @@ public class Mech {
 		this.id = id;
 	}
 
-	public int getYearManufactured() {
-		return yearManufactured;
+	public int getYear() {
+		return year;
 	}
 
-	public void setYearManufactured(int yearManufactured) {
-		this.yearManufactured = yearManufactured;
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 	public String getName() {
@@ -96,14 +96,14 @@ public class Mech {
 
 	@Override
 	public String toString() {
-		return "Mech [id=" + id + ", yearManufactured=" + yearManufactured + ", name=" + name + ", model=" + model + ", weight=" + weight
+		return "Mech [id=" + id + ", year=" + year + ", name=" + name + ", model=" + model + ", weight=" + weight
 				+ "]";
 	}
 	
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(yearManufactured, weight, model, name);
+		return Objects.hash(year, weight, model, name);
 	}
 
 	@Override
@@ -118,7 +118,7 @@ public class Mech {
 			return false;
 		}
 		Mech other = (Mech) obj;
-		return yearManufactured == other.yearManufactured && Objects.equals(weight, other.weight) && Objects.equals(model, other.model)
+		return year == other.year && Objects.equals(weight, other.weight) && Objects.equals(model, other.model)
 				&& Objects.equals(name, other.name);
 	}
 }
