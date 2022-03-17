@@ -35,7 +35,7 @@ import com.kiranevanssoftware.springmechs.entity.Mech;
 public class MechControllerIntegrationTest {
 
 	@Autowired // tells Spring to insert this object into the class
-	private MockMvc mvc; // object for running fake requests
+	private MockMvc mvc;
 
 	@Autowired
 	private ObjectMapper mapper; // the object Spring uses to convert JSON <-> Java
@@ -65,19 +65,16 @@ public class MechControllerIntegrationTest {
 
 	@Test
 	public void testCreate2() throws Exception {
-		// URL body method headers
 		Mech testMech = new Mech(2346, "Ravenhawk", "RH2", 4550);
 		String testMechAsJSON = this.mapper.writeValueAsString(testMech);
 		RequestBuilder req = post("/mech/create").content(testMechAsJSON).contentType(MediaType.APPLICATION_JSON);
 
 		Mech testSavedMech = new Mech(2346, "Ravenhawk", "RH2", 4550);
 		String testSavedMechAsJSON = this.mapper.writeValueAsString(testSavedMech);
-		// this will check the status code of my response
 		ResultMatcher checkStatus = status().isCreated();
-		// this will check the body of the response
 		ResultMatcher checkBody = content().json(testSavedMechAsJSON);
 
-		// run the request and check both matchers
+
 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
 
@@ -87,7 +84,7 @@ public class MechControllerIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		Mech savedMech = new Mech(1, 2765, "Dragonblade", "XDB", 3700);
+		Mech savedMech = new Mech(1L, 2765, "Dragonblade", "XDB", 3700);
 		String savedMechAsJSON = this.mapper.writeValueAsString(savedMech);
 
 		ResultMatcher checkBody = content().json(savedMechAsJSON);

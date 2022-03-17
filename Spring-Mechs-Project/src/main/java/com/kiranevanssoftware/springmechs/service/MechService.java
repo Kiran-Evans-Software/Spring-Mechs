@@ -44,7 +44,7 @@ public class MechService implements ServiceMethods<Mech>{
 		Optional<Mech> existingMech = this.repo.findById(id);
 		if(existingMech.isPresent()) {
 			Mech exists = existingMech.get();
-			exists.setYearManufactured(mech.getYearManufactured());
+			exists.setYear(mech.getYear());
 			exists.setName(mech.getName());
 			exists.setModel(mech.getModel());
 			exists.setWeight(mech.getWeight());
