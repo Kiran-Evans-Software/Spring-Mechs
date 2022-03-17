@@ -31,8 +31,11 @@
 
 ## Screenshot of test results, including coverage report
 
-###Unit Test
-![Screenshot of unit test](/screenshots/unit-test.png)
+###Unit Tests shows coverage of 24.1%
+![Screenshot of unit tests](/screenshots/unit-test.png)
+
+###Integration Test shows success codes 200 and 201
+![Screenshot of integration test](/screenshots/integration-test.png)
 
 ## Link to Jira board
 
