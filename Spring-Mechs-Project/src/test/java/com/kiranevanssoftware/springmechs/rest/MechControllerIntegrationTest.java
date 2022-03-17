@@ -3,6 +3,7 @@ package com.kiranevanssoftware.springmechs.rest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -44,15 +45,16 @@ public class MechControllerIntegrationTest {
 	public void test() {
 		assertEquals(2, 1 + 1);
 	}
-
+ 
 	@Test
 	public void testCreate() throws Exception {
+		
 		// URL body method headers
 		Mech testMech = new Mech(2055, "Megahammer", "27R", 7433);
 		String testMechAsJSON = this.mapper.writeValueAsString(testMech);
 		RequestBuilder req = post("/mech/create").content(testMechAsJSON).contentType(MediaType.APPLICATION_JSON);
 
-		Mech testSavedMech = new Mech(2055, "Megahammer", "27R", 7433);
+		Mech testSavedMech = new Mech(2, 2055, "Megahammer", "27R", 7433);
 		String testSavedMechAsJSON = this.mapper.writeValueAsString(testSavedMech);
 		// this will check the status code of my response
 		ResultMatcher checkStatus = status().isCreated();
@@ -69,7 +71,7 @@ public class MechControllerIntegrationTest {
 		String testMechAsJSON = this.mapper.writeValueAsString(testMech);
 		RequestBuilder req = post("/mech/create").content(testMechAsJSON).contentType(MediaType.APPLICATION_JSON);
 
-		Mech testSavedMech = new Mech(2346, "Ravenhawk", "RH2", 4550);
+		Mech testSavedMech = new Mech(2, 2346, "Ravenhawk", "RH2", 4550);
 		String testSavedMechAsJSON = this.mapper.writeValueAsString(testSavedMech);
 		ResultMatcher checkStatus = status().isCreated();
 		ResultMatcher checkBody = content().json(testSavedMechAsJSON);
@@ -84,7 +86,7 @@ public class MechControllerIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		Mech savedMech = new Mech(1L, 2765, "Dragonblade", "XDB", 3700);
+		Mech savedMech = new Mech(1, 2765, "Dragonblade", "XDB", 3700);
 		String savedMechAsJSON = this.mapper.writeValueAsString(savedMech);
 
 		ResultMatcher checkBody = content().json(savedMechAsJSON);
@@ -103,6 +105,21 @@ public class MechControllerIntegrationTest {
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().json(mechsOutputAsJson));
+	}
+	
+	@Test
+	public void updateTest() throws Exception{
+		Mech entry = new Mech(1L, 2765, "Dragonblade", "XDB", 3700);
+		String entryMechAsJson = this.mapper.writeValueAsString(entry);
+		
+		Mech result = new Mech(1L, 2765, "Dragonblade", "XDB", 3700);
+		String resultMechAsJson = this.mapper.writeValueAsString(result);
+		
+		this.mvc.perform(put("/mech/update/1")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(entryMechAsJson))
+		.andExpect(status().isAccepted())
+		.andExpect(content().json(resultMechAsJson));
 	}
 	
 	
