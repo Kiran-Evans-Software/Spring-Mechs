@@ -25,35 +25,35 @@ Include more explicit, distinct comments in the application code so that I can b
 
 ###Postman Create
 
-![Postman Create](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/postman-create.png)
+![Postman Create](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/postman-create.png)
 
 ###Postman ReadAll
 
-![Postman ReadAll](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/postman-readall.png)
+![Postman ReadAll](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/postman-readall.png)
 
 ###Postman ReadById
 
-![Postman ReadById](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/postman-readbyid.png)
+![Postman ReadById](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/postman-readbyid.png)
 
 ###Postman Update
 
-![Postman Update](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/postman-update.png)
+![Postman Update](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/postman-update.png)
 
 ###Postman Delete
 
-![Postman Delete](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/postman-delete.png)
+![Postman Delete](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/postman-delete.png)
 
 ## Screenshots of database to prove that data is being persisted
 
-![Screenshot of data being persisted in SQL Workbench](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/sql-database.png)
+![Screenshot of data being persisted in SQL Workbench](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/sql-database.png)
 
 ## Screenshot of test results, including coverage report
 
 ###Unit Tests shows coverage of 24.1%
-![Screenshot of unit tests](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/unit-test.png)
+![Screenshot of unit tests](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/unit-test.png)
 
 ###Integration Test shows success codes 200 and 201
-![Screenshot of integration test](https://github.com/Kiran-Evans-Software/Spring-Mechs/Screenshots/integration-test.png)
+![Screenshot of integration test](https://github.com/Kiran-Evans-Software/Spring-Mechs/tree/main/Screenshots/integration-test.png)
 
 ## Link to Jira board
 
